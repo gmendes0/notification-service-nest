@@ -23,4 +23,5 @@ model Notification {
   recipient_id String
 
   @@index([recipient_id])
+  @@map("notifications")
 }
