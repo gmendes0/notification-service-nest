@@ -1,5 +1,7 @@
+import { Content } from './content';
+
 export type NotificationProps = {
-  content: string;
+  content: Content;
   category: string;
   readAt?: Date | null;
   recipientId: string;
@@ -13,15 +15,11 @@ export class Notification {
     this.props = props;
   }
 
-  public set content(content: string) {
-    if (content.length < 5 || content.length > 255) {
-      throw new Error('Content must be between 5 and 255 characters');
-    }
-
+  public set content(content: Content) {
     this.props.content = content;
   }
 
-  public get content(): string {
+  public get content(): Content {
     return this.props.content;
   }
 
